@@ -6,26 +6,20 @@ export const CounterApp = ({value}) => {
 
     const [counter, setCounter ] = useState(value)
 
-    const handlerOperation = (operation) => {
-        switch (operation) {
-            case '+':
+    const handlerAdd = () => {
                 setCounter(counter + 1)
-                break;
-            case '-':
-                setCounter(counter - 1)
-                break;
-        
-            default:
-                break;
-        }
+    }
+
+    const handlerSubtract = () => {
+        setCounter(counter - 1)
     }
   return (
     
     <>
         <h1>CounterApp</h1>
         <p>{counter}</p>
-        <button onClick={()=>handlerOperation('+')} > + </button>
-        <button onClick={()=>handlerOperation('-')} > - </button>
+        <button onClick={handlerAdd} > + </button>
+        <button onClick={handlerSubtract} > - </button>
     </>
   )
 }
